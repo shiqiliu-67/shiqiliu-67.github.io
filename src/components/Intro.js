@@ -19,7 +19,7 @@ const SocialMediaLinks = () => {
   const github = myInfo["github"];
   const linkedIn = myInfo["linkedIn"];
   const googleScholar = myInfo["googleScholar"];
-  const email = myInfo["email"];
+  const email = "mailto:" + myInfo["email"];
   const cv = myInfo["cv"];
 
   return (
@@ -103,7 +103,7 @@ export default function Title() {
                 maxWidth: "240px",
                 height: "auto",
                 borderRadius: 4, // Adjust the border-radius for rounded edges
-                boxShadow: 3,
+                boxShadow: "0px 0px 3px 0px lightgray",
               }}
             />
           </Box>

@@ -41,5 +41,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://shiqiliu-67.github.io/"
+  "homepage": "https://shiqiliu-67.github.io/",
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
 }

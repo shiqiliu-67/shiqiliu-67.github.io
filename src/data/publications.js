@@ -38,7 +38,7 @@ const PUBLICATIONS = [
   {
     title: "Contnual Vision-based Reinforcement Learning with Group Symmetries",
     authors:
-      "Shiqi Liu*, Mengdi Xu*, Peide Huang, Yongkang Liu, Kentaro Oguchi, Ding Zhao",
+      "Shiqi Liu*, Mengdi Xu*, Peide Huang, Xilun Zhang, Yongkang Liu, Kentaro Oguchi, Ding Zhao",
     journals: ["Conference on Robot Learning (CoRL), 2023 (oral, 6.6%)"],
     projectPhoto: "/imgs/covers.gif",
     links: [

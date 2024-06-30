@@ -2,10 +2,10 @@ import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import TopBar from "./components/TopBar";
 import Intro from "./components/Intro";
 import News from "./components/News";
 import Publications from "./components/Publications";
+import Projects from "./components/Projects";
 import "./App.css";
 
 const theme = createTheme({
@@ -24,10 +24,10 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <TopBar />
       <Intro />
       <News />
       <Publications />
+      <Projects />
     </ThemeProvider>
   );
 }
