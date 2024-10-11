@@ -123,7 +123,7 @@ const ProjectBlock = ({
     <Grid
       container
       spacing={2}
-      marginTop={key == 0 ? "0px" : "20px"}
+      marginTop={key === 0 ? "0px" : "20px"}
       marginBottom="0px"
     >
       <Grid size={{ xs: 12, md: 3.5 }}>

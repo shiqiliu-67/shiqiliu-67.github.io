@@ -64,7 +64,7 @@ const NewsBlock = ({ time, content }) => {
 
   const TimeTypography = styled(Typography)(({ theme }) => ({
     color: "darkslategray",
-    width: "90px",
+    width: "120px",
   }));
 
   const NewsTypography = styled(Typography)(({ theme }) => ({

@@ -18,7 +18,7 @@ const HomePage = ({ data }) => {
   return (
     <>
       <Helmet>
-        <title>My Publications | Publications Page</title>
+        <title>Shiqi Liu</title>
         <meta
           name="description"
           content="Shiqi Liu's personal academic website."
