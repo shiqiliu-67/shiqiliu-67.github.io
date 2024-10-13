@@ -7,6 +7,8 @@ import ProjectBlock from "../components/projectBlock";
 import NewsBlock from "../components/newsBlock";
 import InfoBlock from "../components/infoBlock";
 
+import style from "../styles/default";
+
 const HomePage = ({ data }) => {
   const info = data.allInfoJson.nodes[0];
   const news = data.allNewsJson.nodes;
@@ -42,7 +44,7 @@ const HomePage = ({ data }) => {
 
         {/* News Section */}
 
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography component="h1" gutterBottom marginTop="30px" sx={style.h2}>
           News
         </Typography>
         {news.map((item, iter) => (
@@ -51,10 +53,10 @@ const HomePage = ({ data }) => {
 
         {/* Publication Section */}
 
-        <Typography variant="h4" component="h1" gutterBottom marginTop="30px">
+        <Typography component="h2" gutterBottom marginTop="30px" sx={style.h2}>
           Selected Publications
         </Typography>
-        <Typography variant="body1" gutterBottom>
+        <Typography component="p" gutterBottom sx={style.body2}>
           * indicates equal contribution
         </Typography>
         {publications.map((item, iter) => (
@@ -72,10 +74,15 @@ const HomePage = ({ data }) => {
 
         {/* Open source Projects Section */}
 
-        <Typography variant="h4" component="h1" gutterBottom marginTop="30px">
+        <Typography
+          variant="h5"
+          component="h1"
+          gutterBottom
+          marginTop="30px"
+          sx={style.h2}
+        >
           Open Sourced Projects
         </Typography>
-        {/* <List> */}
         {openSourceProjects.map((item, iter) => (
           <ProjectBlock
             key={iter}
@@ -88,7 +95,6 @@ const HomePage = ({ data }) => {
             myName={myName}
           />
         ))}
-        {/* </List> */}
       </Container>
     </>
   );

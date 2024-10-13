@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, Typography, Box } from "@mui/material";
-
 import Grid from "@mui/material/Grid2";
+
+import style from "../styles/default";
 
 const ProjectBlock = ({
   key,
@@ -19,7 +20,9 @@ const ProjectBlock = ({
 
   const formatMe = (realName) => {
     return (
-      <span style={{ color: "black", fontWeight: "bold" }}>{realName}</span>
+      <span style={{ color: style.primeColor, fontWeight: "bold" }}>
+        {realName}
+      </span>
     );
   };
 
@@ -159,16 +162,16 @@ const ProjectBlock = ({
       </Grid>
 
       <Grid size={{ xs: 12, md: 8.5 }}>
-        <Typography variant="h6" sx={{ fontWeight: "Bold" }}>
+        <Typography variant="h3" sx={style.h3}>
           {title}
         </Typography>
-        <Typography variant="body1" sx={{ color: "grey" }}>
+        <Typography component="p" sx={style.body1}>
           {formatAuthors(authors)}
         </Typography>
-        <Typography variant="body1" sx={{ color: "grey" }}>
+        <Typography component="p" sx={style.body1}>
           {formatJournals(journals)}
         </Typography>
-        <Typography variant="body1" sx={{ color: "grey" }}>
+        <Typography component="p" sx={style.body1}>
           {links.map((link, idx) => formatLink(link, idx))}
         </Typography>
       </Grid>

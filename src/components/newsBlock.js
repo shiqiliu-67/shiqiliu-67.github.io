@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "@mui/system";
 import { Link, Typography, Box } from "@mui/material";
+import style from "../styles/default";
 
 import Grid from "@mui/material/Grid2";
 
@@ -21,7 +22,7 @@ const NewsBlock = ({ time, content }) => {
   ];
 
   const [year, month] = time.split("-");
-  const formattedTime = `${months[parseInt(month) - 1]}. ${year}`;
+  const formattedTime = `${months[parseInt(month) - 1]}. ${year}:`;
 
   // Function to parse and render Markdown-style links
   const parseMarkdown = (text) => {
@@ -62,10 +63,10 @@ const NewsBlock = ({ time, content }) => {
     return parts;
   };
 
-  const TimeTypography = styled(Typography)(({ theme }) => ({
-    color: "darkslategray",
-    width: "120px",
-  }));
+  // const TimeTypography = styled(Typography)(({ theme }) => ({
+  //   color: "darkslategray",
+  //   width: "100px",
+  // }));
 
   const NewsTypography = styled(Typography)(({ theme }) => ({
     color: "darkslategray",
@@ -84,13 +85,21 @@ const NewsBlock = ({ time, content }) => {
   }));
 
   return (
-    <Box display="flex">
-      <TimeTypography variant="body1" component="p">
-        {formattedTime}
-      </TimeTypography>
-      <NewsTypography variant="body1" component="span">
-        {parseMarkdown(content)}
-      </NewsTypography>
+    <Box display="flex" sx={{ gap: 1 }}>
+      <Box sx={{ width: "100px" }}>
+        <Typography
+          variant="body2"
+          component="p"
+          sx={{ ...style.body1, ...{ textAlign: "right" } }}
+        >
+          {formattedTime}
+        </Typography>
+      </Box>
+      <Box sx={{ width: "100%" }}>
+        <Typography variant="body2" component="p" sx={style.body1}>
+          {parseMarkdown(content)}
+        </Typography>
+      </Box>
     </Box>
   );
 };

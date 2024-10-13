@@ -6,8 +6,10 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SchoolIcon from "@mui/icons-material/School";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
-
 import Grid from "@mui/material/Grid2";
+import { StaticImage } from "gatsby-plugin-image";
+
+import style from "../styles/default";
 
 const SocialMediaLinks = ({ info }) => {
   const iconButtonStyle = { color: "#000", margin: "0 10px" }; // Add custom styles if needed
@@ -120,15 +122,7 @@ const InfoBlock = ({ info }) => {
   }));
 
   return (
-    <Grid
-      container
-      spacing={2}
-      // columnSpacing={{ xs: 0, sm: 4, md: 8 }}
-      // alignItems="center"
-      // justifyContent="center"
-      // style={{ minHeight: "100vh" }}
-      marginTop="30px"
-    >
+    <Grid container spacing={2} marginTop="30px">
       <Grid size={{ xs: 12, md: 3 }}>
         <Box
           sx={{
@@ -138,26 +132,26 @@ const InfoBlock = ({ info }) => {
             height: "100%",
           }}
         >
-          <Box
-            component="img"
-            src={info.profilePhoto} // Replace with your profile photo path
+          <StaticImage
+            src="../images/profilePhoto.png" // Path to your image
             alt="Profile Photo"
-            sx={{
-              justifyContent: { xs: "center", md: "flex-start" },
+            style={{
+              justifyContent: "center",
               width: "100%",
               maxWidth: "240px",
               height: "auto",
-              borderRadius: 3, // Adjust the border-radius for rounded edges
-              boxShadow: "0px 0px 3px 0px lightgray",
+              borderRadius: "16px", // Adjust as needed
             }}
           />
         </Box>
       </Grid>
       <Grid size={{ xs: 12, md: 9 }}>
-        <Typography variant="h4" gutterBottom>
-          Shiqi Liu
+        <Typography variant="h1" gutterBottom sx={style.h1}>
+          {info.name}
         </Typography>
-        <Typography variant="body1">{parseMarkdown(info.content)}</Typography>
+        <Typography variant="body2" sx={style.body1}>
+          {parseMarkdown(info.content)}
+        </Typography>
         <SocialMediaLinks info={info} />
       </Grid>
     </Grid>
