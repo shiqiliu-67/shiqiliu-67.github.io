@@ -1,5 +1,9 @@
 [
   {
+    "time": "2024-09",
+    "content": "One paper about [offline RL](https://arxiv.org/abs/2407.14653) was accepted by NeurIPS 2024."
+  },
+  {
     "time": "2023-11",
     "content": "One paper about [cardiovascular record retrieval](https://arxiv.org/abs/2304.06286) was accepted by PMLR ML4H 2023."
   },

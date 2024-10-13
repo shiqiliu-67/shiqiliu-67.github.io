@@ -1,5 +1,12 @@
 [
   {
+    "title": "OASIS: Conditional Distribution Shaping for Offline Safe Reinforcement Learning",
+    "authors": "Yihang Yao*, Zhepeng Cen*, Wenhao Ding, Haohong Lin, Shiqi Liu, Tingnan Zhang, Wenhao Yu, Ding Zhao",
+    "journals": "Conference on Neural Information Processing Systems (NeurIPS) 2024",
+    "image": "/imgs/oasis.png",
+    "links": [{ "name": "Paper", "link": "https://arxiv.org/abs/2407.14653" }]
+  },
+  {
     "title": "Creative Robot Tool Use with Large Language Models",
     "authors": "Mengdi Xu*, Peide Huang*, Wenhao Yu*, Shiqi Liu, Xilun Zhang, Yaru Niu, Tingnan Zhang, Fei Xia, Jie Tan, Ding Zhao",
     "journals": "CoRL 2023 Workshop on Language and Robot Learning: Language as Grounding",
@@ -20,7 +27,7 @@
   {
     "title": "Automated Cardiovascular Record Retrieval by Multimodal Learning between Electrocardiogram and Clinical Report",
     "authors": "Jielin Qiu*, Jiacheng Zhu*, Shiqi Liu, William Han, Jingqi Zhang, Chaojing Duan, Michael Rosenberg, Emerson Liu, Douglas Weber, Ding Zhao",
-    "journals": "Proceedings of Machine Learning for Health (PMLR), 2023",
+    "journals": "Proceedings of Machine Learning for Health (PMLR) 2023",
     "image": "/imgs/ecgEncoding.png",
     "links": [
       {
@@ -33,7 +40,7 @@
   {
     "title": "Continual Vision-based Reinforcement Learning with Group Symmetries",
     "authors": "Shiqi Liu*, Mengdi Xu*, Peide Huang, Xilun Zhang, Yongkang Liu, Kentaro Oguchi, Ding Zhao",
-    "journals": "Conference on Robot Learning (CoRL), 2023 (oral, 6.6%)",
+    "journals": "Conference on Robot Learning (CoRL) 2023 (oral, 6.6%)",
     "image": "/imgs/covers.gif",
     "links": [
       {
@@ -46,7 +53,7 @@
   {
     "title": "What Went Wrong? Closing the Sim-to-Real Gap via Differentiable Causal Discovery",
     "authors": "Peide Huang, Xilun Zhang*, Ziang Cao*, Shiqi Liu*, Mengdi Xu, Wenhao Ding, Jonathan Francis, Bingqing Chen, Ding Zhao",
-    "journals": "Conference on Robot Learning (CoRL), 2023",
+    "journals": "Conference on Robot Learning (CoRL) 2023",
     "image": "/imgs/compass.gif",
     "links": [
       {

@@ -149,9 +149,10 @@ const InfoBlock = ({ info }) => {
         <Typography variant="h1" gutterBottom sx={style.h1}>
           {info.name}
         </Typography>
-        <Typography variant="body2" sx={style.body1}>
+        <Typography variant="body2" gutterBottom sx={style.body1}>
           {parseMarkdown(info.content)}
         </Typography>
+
         <SocialMediaLinks info={info} />
       </Grid>
     </Grid>
