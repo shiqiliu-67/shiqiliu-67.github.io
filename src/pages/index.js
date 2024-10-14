@@ -56,12 +56,13 @@ const HomePage = ({ data }) => {
         <Typography component="h2" gutterBottom marginTop="30px" sx={style.h2}>
           Selected Publications
         </Typography>
-        <Typography component="p" gutterBottom sx={style.body2}>
+        <Typography component="p" gutterBottom sx={style.body1}>
           * indicates equal contribution
         </Typography>
         {publications.map((item, iter) => (
           <ProjectBlock
             key={iter}
+            index={iter}
             title={item.title}
             image={item.image}
             authors={item.authors}
@@ -86,6 +87,7 @@ const HomePage = ({ data }) => {
         {openSourceProjects.map((item, iter) => (
           <ProjectBlock
             key={iter}
+            index={iter}
             title={item.title}
             image={item.image}
             authors={item.authors}
