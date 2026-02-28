@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Online AprilTag Generator",
+    "authors": "",
+    "descriptions": "A simple, easy-to-use AprilTag generator that creates multiple tags in a single PDF file. Ideal for object detection, pose estimation, and camera calibration.",
+    "image": "/imgs/apriltagGen.png",
+    "links": [
+      {
+        "name": "Website",
+        "link": "https://shiqiliu-67.github.io/apriltag-generator/"
+      },
+      {
+        "name": "Github",
+        "link": "https://github.com/shiqiliu-67/apriltag-generator"
+      }
+    ]
+  }
+]

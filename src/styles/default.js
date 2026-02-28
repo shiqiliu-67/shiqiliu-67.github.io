@@ -35,11 +35,13 @@ const styles = {
     color: primeColor,
   },
   body1: {
+    textAlign: "left",
     fontSize: "17.5px",
     fontFamily: "Arial",
     color: SecondColor,
   },
   body2: {
+    textAlign: "left",
     fontSize: "14px",
     fontFamily: "Arial",
     color: SecondColor,
