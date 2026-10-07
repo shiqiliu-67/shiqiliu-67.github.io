@@ -1,5 +1,9 @@
 [
   {
+    "time": "2026-08",
+    "content": "I completed a summer internship at MERL (May–August 2026), working on agentic quadrupedal robots that learn missing whole-body capabilities from task failures."
+  },
+  {
     "time": "2025-08",
     "content": "Our paper about [Tactile-enabled quadruped transport](https://linchangyi1.github.io/LocoTouch/) got accepted by CORL 2025."
   },
