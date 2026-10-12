@@ -8,6 +8,14 @@
     "content": "I spent a wonderful summer at MERL as an intern, working on quadrupedal whole-body manipulation!"
   },
   {
+    "time": "2026-06",
+    "content": "Our paper [APEX](https://apex-humanoid.github.io/) was accepted to IROS 2026!"
+  },
+  {
+    "time": "2026-04",
+    "content": "Our paper [BAO](https://proactive-agentic-rl.github.io/) was accepted to ICML 2026!"
+  },
+  {
     "time": "2025-08",
     "content": "Our paper about [Tactile-enabled quadruped transport](https://linchangyi1.github.io/LocoTouch/) got accepted by CORL 2025."
   },
