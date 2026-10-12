@@ -10,6 +10,17 @@
     ]
   },
   {
+    "title": "APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots",
+    "authors": "Yikai Wang*, Tingxuan Leng*, Changyi Lin*, Shiqi Liu, Shir Simon, Bingqing Chen, Jonathan Francis, Ding Zhao",
+    "journals": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026",
+    "image": "/imgs/apex.gif",
+    "links": [
+      { "name": "Website", "link": "https://apex-humanoid.github.io/" },
+      { "name": "Paper", "link": "https://arxiv.org/abs/2602.11143" },
+      { "name": "Video", "link": "https://www.youtube.com/watch?v=jq7xx9Fusd8" }
+    ]
+  },
+  {
     "title": "LocoTouch: Learning Dynamic Quadrupedal Transport with Tactile Sensing",
     "authors": "Changyi Lin*, Yuxin Ray Song*, Boda Huo, Mingyang Yu, Yikai Wang, Shiqi Liu, Yuxiang Yang, Wenhao Yu, Tingnan Zhang, Jie Tan, Yiyue Luo, Ding Zhao",
     "journals": "Conference on Robot Learning (CoRL), 2025",
