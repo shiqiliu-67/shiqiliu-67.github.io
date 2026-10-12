@@ -45,7 +45,7 @@
     "image": "/imgs/capture.gif",
     "links": [
       { "name": "Website", "link": "https://sim2real-capture.github.io/" },
-      { "name": "Paper", "link": "https://arxiv.org/abs/2602.12281" }
+      { "name": "Paper", "link": "https://arxiv.org/abs/2410.20357" }
     ]
   },
   {
@@ -87,7 +87,7 @@
     "links": [
       {
         "name": "Code",
-        "link": "https://github.com/Jason-Qiu/ECG_image_encoding"
+        "link": "https://github.com/Jielin-Qiu/ECG_image_encoding"
       },
       { "name": "Paper", "link": "https://arxiv.org/abs/2304.06286" }
     ]
