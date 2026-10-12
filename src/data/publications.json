@@ -1,5 +1,15 @@
 [
   {
+    "title": "MIRROR: Reflecting Hidden Symmetries from Offline Robot Interaction Data",
+    "authors": "Shiqi Liu, Yihang Yao, Peide Huang, Mengdi Xu, Ding Zhao",
+    "journals": "Conference on Robot Learning (CoRL), 2026",
+    "image": "/imgs/mirror.gif",
+    "links": [
+      { "name": "Website", "link": "https://pomdp-mirror.github.io/" },
+      { "name": "Paper", "link": "/files/mirror.pdf" }
+    ]
+  },
+  {
     "title": "LocoTouch: Learning Dynamic Quadrupedal Transport with Tactile Sensing",
     "authors": "Changyi Lin*, Yuxin Ray Song*, Boda Huo, Mingyang Yu, Yikai Wang, Shiqi Liu, Yuxiang Yang, Wenhao Yu, Tingnan Zhang, Jie Tan, Yiyue Luo, Ding Zhao",
     "journals": "Conference on Robot Learning (CoRL), 2025",
