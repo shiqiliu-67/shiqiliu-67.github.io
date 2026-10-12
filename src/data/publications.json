@@ -21,6 +21,17 @@
     ]
   },
   {
+    "title": "Pushing Forward Pareto Frontiers of Proactive Agents with Behavioral Agentic Optimization",
+    "authors": "Yihang Yao, Zhepeng Cen, Haohong Lin, Shiqi Liu, Zuxin Liu, Jiacheng Zhu, Zhang-Wei Hong, Laixi Shi, Ding Zhao",
+    "journals": "International Conference on Machine Learning (ICML), 2026",
+    "image": "/imgs/bao.png",
+    "links": [
+      { "name": "Website", "link": "https://proactive-agentic-rl.github.io/" },
+      { "name": "Paper", "link": "https://arxiv.org/abs/2602.11351" },
+      { "name": "Code", "link": "https://github.com/yihangyao/BAO" }
+    ]
+  },
+  {
     "title": "LocoTouch: Learning Dynamic Quadrupedal Transport with Tactile Sensing",
     "authors": "Changyi Lin*, Yuxin Ray Song*, Boda Huo, Mingyang Yu, Yikai Wang, Shiqi Liu, Yuxiang Yang, Wenhao Yu, Tingnan Zhang, Jie Tan, Yiyue Luo, Ding Zhao",
     "journals": "Conference on Robot Learning (CoRL), 2025",
