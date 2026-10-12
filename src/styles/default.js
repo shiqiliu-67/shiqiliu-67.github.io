@@ -1,13 +1,23 @@
-const primeColor = "#363636";
-const SecondColor = "#808080";
+const primeColor = "var(--color-text-primary)";
+const SecondColor = "var(--color-text-secondary)";
+const accentColor = "var(--color-accent)";
+const link = {
+  color: "var(--color-link)",
+  "&:hover": {
+    color: accentColor,
+    textDecoration: "underline",
+  },
+};
 
 const styles = {
   primeColor,
   SecondColor,
+  accentColor,
+  link,
   authorLink: {
     fontFamily: "Arial",
     fontSize: "20px",
-    color: "#00B803",
+    ...link,
     textDecoration: "none",
     "&:hover": {
       textDecoration: "underline",

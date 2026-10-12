@@ -31,7 +31,7 @@ const NewsBlock = ({ time, content }) => {
 
     // Loop through all markdown-style links and bold text
     while ((match = regex.exec(text)) !== null) {
-      const [fullMatch, boldMatch, boldText, linkText, linkHref] = match;
+      const [, , boldText, linkText, linkHref] = match;
 
       // Push text before the current match
       if (lastIndex < match.index) {
@@ -61,26 +61,15 @@ const NewsBlock = ({ time, content }) => {
     return parts;
   };
 
-  // const TimeTypography = styled(Typography)(({ theme }) => ({
-  //   color: "darkslategray",
-  //   width: "100px",
-  // }));
-
-  const NewsTypography = styled(Typography)(({ theme }) => ({
-    color: "darkslategray",
-  }));
-
-  const NewsLink = styled(Link)(({ theme }) => ({
+  const NewsLink = styled(Link)({
+    ...style.link,
     textDecoration: "none",
-    "&:hover": {
-      color: "#B908C5",
-    },
-  }));
+  });
 
-  const Highlight = styled("span")(({ theme }) => ({
-    color: "#B908C5",
+  const Highlight = styled("span")({
+    color: style.accentColor,
     fontWeight: "bold",
-  }));
+  });
 
   return (
     <Box display="flex" sx={{ gap: 1 }}>

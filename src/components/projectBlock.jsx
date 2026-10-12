@@ -14,7 +14,7 @@ const ProjectBlock = ({
   myName,
 }) => {
   const formatUnlinkAuthor = (realName) => {
-    return <span style={{ color: "red", fontWeight: "bold" }}>{realName}</span>;
+    return <span style={{ color: "var(--color-error)", fontWeight: "bold" }}>{realName}</span>;
   };
 
   const formatMe = (realName) => {
@@ -32,9 +32,8 @@ const ProjectBlock = ({
         href={href}
         sx={{
           color: "inherit",
-          // textDecoration: "none",
           "&:hover": {
-            color: "#B908C5", // Change this to your desired hover color
+            color: style.accentColor,
           },
         }}
       >
@@ -43,7 +42,7 @@ const ProjectBlock = ({
     );
   };
 
-  const getFormattedPart = (text, name, idx) => {
+  const getFormattedPart = (name, idx) => {
     const author = getAuthor(name);
     if (!author) {
       return formatUnlinkAuthor(name);
@@ -66,7 +65,7 @@ const ProjectBlock = ({
 
       if (idx < arr.length - 1) {
         const name = text.match(namesRegex)[idx];
-        acc.push(getFormattedPart(part, name, idx));
+        acc.push(getFormattedPart(name, idx));
       }
 
       return acc;
@@ -95,13 +94,13 @@ const ProjectBlock = ({
         const abbr = text.match(abbrRegex)[idx];
         if (awardRegex.test(abbr)) {
           acc.push(
-            <span key={idx} style={{ color: "#B908C5", fontWeight: "bold" }}>
+            <span key={idx} style={{ color: style.accentColor, fontWeight: "bold" }}>
               {abbr}
             </span>
           );
         } else {
           acc.push(
-            <span key={idx} style={{ color: "black", fontWeight: "bold" }}>
+            <span key={idx} style={{ color: style.primeColor, fontWeight: "bold" }}>
               {abbr}
             </span>
           );
@@ -113,9 +112,9 @@ const ProjectBlock = ({
   };
 
   const formatLink = (link, idx) => (
-    <span>
+    <span key={idx}>
       {idx > 0 && " | "}
-      <Link key={idx} href={link["link"]}>
+      <Link href={link["link"]} sx={style.link}>
         {link["name"]}
       </Link>
     </span>
@@ -136,8 +135,8 @@ const ProjectBlock = ({
             position: "relative",
             width: "100%",
             paddingTop: "64%", // 4:3 aspect ratio
-            backgroundColor: "white",
-            boxShadow: "0px 0px 0px 1px lightgray",
+            backgroundColor: "white", // Keep research figures on their original light canvas.
+            boxShadow: "0px 0px 0px 1px var(--color-border)",
             borderRadius: 2,
             overflow: "hidden",
             display: "flex",

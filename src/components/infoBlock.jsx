@@ -9,7 +9,14 @@ import ContactPageIcon from "@mui/icons-material/ContactPage";
 import style from "../styles/default";
 
 const SocialMediaLinks = ({ info }) => {
-  const iconButtonStyle = { color: "#000", margin: "0 10px" }; // Add custom styles if needed
+  const iconButtonStyle = {
+    color: style.primeColor,
+    margin: "0 10px",
+    "&:hover": {
+      color: style.accentColor,
+      backgroundColor: "var(--color-control-hover)",
+    },
+  };
   const github = info.github;
   const linkedIn = info.linkedIn;
   const googleScholar = info.googleScholar;
@@ -22,7 +29,7 @@ const SocialMediaLinks = ({ info }) => {
         href={email}
         target="_blank"
         rel="noopener"
-        style={iconButtonStyle}
+        sx={iconButtonStyle}
       >
         <EmailIcon />
       </IconButton>
@@ -31,7 +38,7 @@ const SocialMediaLinks = ({ info }) => {
         href={github}
         target="_blank"
         rel="noopener"
-        style={iconButtonStyle}
+        sx={iconButtonStyle}
       >
         <GitHubIcon />
       </IconButton>
@@ -39,7 +46,7 @@ const SocialMediaLinks = ({ info }) => {
         href={googleScholar}
         target="_blank"
         rel="noopener"
-        style={iconButtonStyle}
+        sx={iconButtonStyle}
       >
         <SchoolIcon />
       </IconButton>
@@ -47,7 +54,7 @@ const SocialMediaLinks = ({ info }) => {
         href={linkedIn}
         target="_blank"
         rel="noopener"
-        style={iconButtonStyle}
+        sx={iconButtonStyle}
       >
         <LinkedInIcon />
       </IconButton>
@@ -55,7 +62,7 @@ const SocialMediaLinks = ({ info }) => {
         href={cv}
         target="_blank"
         rel="noopener"
-        style={iconButtonStyle}
+        sx={iconButtonStyle}
       >
         <ContactPageIcon />
       </IconButton>
@@ -73,7 +80,7 @@ const InfoBlock = ({ info }) => {
 
     // Loop through all markdown-style links and bold text
     while ((match = regex.exec(text)) !== null) {
-      const [fullMatch, boldMatch, boldText, linkText, linkHref] = match;
+      const [, , boldText, linkText, linkHref] = match;
 
       // Push text before the current match
       if (lastIndex < match.index) {
@@ -103,21 +110,15 @@ const InfoBlock = ({ info }) => {
     return parts;
   };
 
-  const ContentTypography = styled(Typography)(({ theme }) => ({
-    color: "darkslategray",
-  }));
-
-  const ContentLink = styled(Link)(({ theme }) => ({
+  const ContentLink = styled(Link)({
+    ...style.link,
     textDecoration: "none",
-    "&:hover": {
-      color: "#B908C5",
-    },
-  }));
+  });
 
-  const Highlight = styled("span")(({ theme }) => ({
-    color: "#B908C5",
+  const Highlight = styled("span")({
+    color: style.accentColor,
     fontWeight: "bold",
-  }));
+  });
 
   return (
     <Grid container spacing={2} marginTop="30px">
