@@ -6,7 +6,7 @@
     "image": "/imgs/mirror.gif",
     "links": [
       { "name": "Website", "link": "https://pomdp-mirror.github.io/" },
-      { "name": "Paper", "link": "/files/mirror.pdf" }
+      { "name": "Paper", "link": "https://arxiv.org/abs/2610.17422" }
     ]
   },
   {
