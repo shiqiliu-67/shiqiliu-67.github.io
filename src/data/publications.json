@@ -1,6 +1,15 @@
 [
   {
-    "title": "MIRROR: Reflecting Hidden Symmetries from Offline Robot Interaction Data",
+    "title": "ELEVATE: Agentic Controller Acquisition from Task Failure for Quadrupedal Manipulation",
+    "authors": "Shiqi Liu, Radu Corcodel, Ding Zhao",
+    "journals": "Under review, 2026",
+    "image": "/imgs/elevate.gif",
+    "links": [
+      { "name": "Website", "link": "https://agentic-quad-elevate.github.io/public/" }
+    ]
+  },
+  {
+    "title": "MIRROR:Reflecting Hidden Symmetries from Offline Robot Interaction Data",
     "authors": "Shiqi Liu, Yihang Yao, Peide Huang, Mengdi Xu, Ding Zhao",
     "journals": "Conference on Robot Learning (CoRL), 2026",
     "image": "/imgs/mirror.gif",
