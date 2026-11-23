@@ -4,7 +4,6 @@ import { Link, Typography, Box, Grid } from "@mui/material";
 import style from "../styles/default";
 
 const ProjectBlock = ({
-  index,
   title,
   authors,
   journals,
@@ -13,13 +12,17 @@ const ProjectBlock = ({
   authorsData,
   myName,
 }) => {
-  const formatUnlinkAuthor = (realName) => {
-    return <span style={{ color: "var(--color-error)", fontWeight: "bold" }}>{realName}</span>;
+  const formatUnlinkAuthor = (realName, idx) => {
+    return (
+      <span key={idx} style={{ color: "var(--color-error)", fontWeight: "bold" }}>
+        {realName}
+      </span>
+    );
   };
 
-  const formatMe = (realName) => {
+  const formatMe = (realName, idx) => {
     return (
-      <span style={{ color: style.primeColor, fontWeight: "bold" }}>
+      <span key={idx} style={{ color: style.primeColor, fontWeight: "bold" }}>
         {realName}
       </span>
     );
@@ -31,10 +34,8 @@ const ProjectBlock = ({
         key={idx}
         href={href}
         sx={{
+          ...style.link,
           color: "inherit",
-          "&:hover": {
-            color: style.accentColor,
-          },
         }}
       >
         {realName}
@@ -45,12 +46,12 @@ const ProjectBlock = ({
   const getFormattedPart = (name, idx) => {
     const author = getAuthor(name);
     if (!author) {
-      return formatUnlinkAuthor(name);
+      return formatUnlinkAuthor(name, idx);
     }
     const authorName = author.realName ? author.realName : author.name;
     const authorLink = author.homepage;
     if (name === myName) {
-      return formatMe(authorName);
+      return formatMe(authorName, idx);
     }
     return formatAuthorAsLink(authorName, authorLink, idx);
   };
@@ -111,69 +112,65 @@ const ProjectBlock = ({
     }, []);
   };
 
-  const formatLink = (link, idx) => (
-    <span key={idx}>
-      {idx > 0 && " | "}
-      <Link href={link["link"]} sx={style.link}>
-        {link["name"]}
-      </Link>
-    </span>
-  );
-
-  // console.log("key", index);
-
   return (
     <Grid
+      component="article"
       container
-      spacing={2}
-      marginTop={index === 0 ? "0px" : "20px"}
-      marginBottom="0px"
+      columnSpacing={{ xs: 0, sm: 3 }}
+      rowSpacing={1.5}
+      sx={{
+        py: { xs: 2, sm: 2.25 },
+        "& + article": { borderTop: "1px solid var(--color-border)" },
+      }}
     >
-      <Grid size={{ xs: 12, md: 3.5 }}>
+      <Grid size={{ xs: 12, sm: 3.5 }}>
         <Box
           sx={{
-            position: "relative",
-            width: "100%",
-            paddingTop: "64%", // 4:3 aspect ratio
+            aspectRatio: "25 / 16",
+            maxWidth: { xs: "20rem", sm: "none" },
             backgroundColor: "white", // Keep research figures on their original light canvas.
-            boxShadow: "0px 0px 0px 1px var(--color-border)",
-            borderRadius: 2,
+            border: "1px solid var(--color-border)",
+            borderRadius: "12px",
             overflow: "hidden",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            display: "grid",
+            placeItems: "center",
           }}
         >
           <Box
             component="img"
-            src={image} // Replace with your profile photo path
-            alt="Project Photo"
+            src={image}
+            alt=""
             sx={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
               width: "92%",
               height: "96%",
               objectFit: "contain",
-              transform: "translate(-50%, -50%)",
             }}
           />
         </Box>
       </Grid>
 
-      <Grid size={{ xs: 12, md: 8.5 }}>
-        <Typography variant="h3" sx={style.h3}>
+      <Grid size={{ xs: 12, sm: 8.5 }}>
+        <Typography variant="h3" sx={{ ...style.h3, mb: 0.5 }}>
           {title}
         </Typography>
-        <Typography component="p" sx={style.body1}>
-          {formatAuthors(authors)}
-        </Typography>
-        <Typography component="p" sx={style.body1}>
+        {authors && (
+          <Typography component="p" sx={style.body2}>
+            {formatAuthors(authors)}
+          </Typography>
+        )}
+        <Typography
+          component="p"
+          sx={{ ...style.body2, fontStyle: authors ? "italic" : "normal", mt: 0.25 }}
+        >
           {formatJournals(journals)}
         </Typography>
-        <Typography component="p" sx={style.body1}>
-          {links.map((link, idx) => formatLink(link, idx))}
-        </Typography>
+        <Box sx={{ ...style.body2, display: "flex", flexWrap: "wrap", gap: 1.5, mt: 0.75 }}>
+          {links.map(({ name, link }) => (
+            <Link key={name} href={link} sx={{ ...style.link, fontWeight: 600 }}>
+              {name}
+            </Link>
+          ))}
+        </Box>
       </Grid>
     </Grid>
   );

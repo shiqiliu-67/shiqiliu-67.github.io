@@ -20,7 +20,7 @@ const NewsBlock = ({ time, content }) => {
   ];
 
   const [year, month] = time.split("-");
-  const formattedTime = `${months[parseInt(month) - 1]}. ${year}:`;
+  const formattedTime = `${months[parseInt(month) - 1]} ${year}`;
 
   // Function to parse and render Markdown-style links
   const parseMarkdown = (text) => {
@@ -44,9 +44,9 @@ const NewsBlock = ({ time, content }) => {
       } else if (linkText && linkHref) {
         // Handle Markdown-style links [text](url)
         parts.push(
-          <NewsLink key={linkHref} href={linkHref}>
+          <Link key={linkHref} href={linkHref} sx={style.link}>
             {linkText}
-          </NewsLink>
+          </Link>
         );
       }
 
@@ -61,37 +61,32 @@ const NewsBlock = ({ time, content }) => {
     return parts;
   };
 
-  const NewsLink = styled(Link)({
-    ...style.link,
-    textDecoration: "none",
-  });
-
   const Highlight = styled("span")({
     color: style.accentColor,
     fontWeight: "bold",
   });
 
   return (
-    <Box display="flex" sx={{ gap: 1 }}>
-      <Box sx={{ width: "100px" }}>
-        <Typography
-          variant="body2"
-          component="p"
-          sx={{ ...style.body1, textAlign: "right" }}
-        >
-          {formattedTime}
-        </Typography>
-      </Box>
-
-      <Box sx={{ width: "100%" }}>
-        <Typography
-          variant="body2"
-          component="p"
-          sx={{ ...style.body1, textAlign: "left" }}
-        >
-          {parseMarkdown(content)}
-        </Typography>
-      </Box>
+    <Box
+      component="li"
+      sx={{
+        display: "grid",
+        gridTemplateColumns: { xs: "4.75rem minmax(0, 1fr)", sm: "5.5rem minmax(0, 1fr)" },
+        columnGap: { xs: 1, sm: 2 },
+        alignItems: "baseline",
+        py: 0.375,
+      }}
+    >
+      <Typography
+        component="time"
+        dateTime={time}
+        sx={{ ...style.body2, fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" }}
+      >
+        {formattedTime}
+      </Typography>
+      <Typography component="p" sx={{ ...style.body1, fontSize: "0.9375rem" }}>
+        {parseMarkdown(content)}
+      </Typography>
     </Box>
   );
 };

@@ -1,85 +1,44 @@
 import { styled } from "@mui/system";
-import { Link, Typography, Box, IconButton, ButtonGroup, Grid } from "@mui/material";
-import EmailIcon from "@mui/icons-material/Email";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import SchoolIcon from "@mui/icons-material/School";
-import ContactPageIcon from "@mui/icons-material/ContactPage";
-import XIcon from "@mui/icons-material/X";
+import { Link, Typography, Box, Grid } from "@mui/material";
 
 import style from "../styles/default";
 
 const SocialMediaLinks = ({ info }) => {
-  const iconButtonStyle = {
-    color: style.primeColor,
-    margin: { xs: "0 3px", sm: "0 10px" },
-    "&:hover": {
-      color: style.accentColor,
-      backgroundColor: "var(--color-control-hover)",
-    },
-  };
-  const github = info.github;
-  const linkedIn = info.linkedIn;
-  const googleScholar = info.googleScholar;
-  const twitter = info.twitter;
-  const email = `mailto:${info.email}`;
-  const cv = info.cv;
+  const links = [
+    { label: "Email", href: info.email && `mailto:${info.email}` },
+    { label: "CV", href: info.cv },
+    { label: "Google Scholar", href: info.googleScholar },
+    { label: "GitHub", href: info.github },
+    { label: "LinkedIn", href: info.linkedIn },
+    { label: "X (Twitter)", href: info.twitter },
+  ];
 
   return (
-    <ButtonGroup sx={{ flexWrap: "wrap" }}>
-      <IconButton
-        href={email}
-        target="_blank"
-        rel="noopener"
-        sx={iconButtonStyle}
-      >
-        <EmailIcon />
-      </IconButton>
-
-      <IconButton
-        href={github}
-        target="_blank"
-        rel="noopener"
-        sx={iconButtonStyle}
-      >
-        <GitHubIcon />
-      </IconButton>
-      <IconButton
-        href={googleScholar}
-        target="_blank"
-        rel="noopener"
-        sx={iconButtonStyle}
-      >
-        <SchoolIcon />
-      </IconButton>
-      <IconButton
-        href={linkedIn}
-        target="_blank"
-        rel="noopener"
-        sx={iconButtonStyle}
-      >
-        <LinkedInIcon />
-      </IconButton>
-      {twitter && (
-        <IconButton
-          aria-label="X (Twitter)"
-          href={twitter}
+    <Box
+      component="nav"
+      aria-label="Profile links"
+      sx={{
+        ...style.body2,
+        display: { xs: "grid", sm: "flex" },
+        gridTemplateColumns: "repeat(3, minmax(0, max-content))",
+        flexWrap: "wrap",
+        columnGap: 2.25,
+        rowGap: 0.5,
+        mt: 1.5,
+      }}
+    >
+      {links.filter(({ href }) => href).map(({ label, href }) => (
+        <Link
+          key={label}
+          href={href}
           target="_blank"
           rel="noopener"
-          sx={iconButtonStyle}
+          sx={{ ...style.link, fontWeight: 600, py: 0.25 }}
         >
-          <XIcon />
-        </IconButton>
-      )}
-      <IconButton
-        href={cv}
-        target="_blank"
-        rel="noopener"
-        sx={iconButtonStyle}
-      >
-        <ContactPageIcon />
-      </IconButton>
-    </ButtonGroup>
+          {label}
+        </Link>
+      ))}
+    </Box>
   );
 };
 
@@ -106,9 +65,9 @@ const InfoBlock = ({ info }) => {
       } else if (linkText && linkHref) {
         // Handle Markdown-style links [text](url)
         parts.push(
-          <ContentLink key={linkHref} href={linkHref}>
+          <Link key={linkHref} href={linkHref} sx={style.link}>
             {linkText}
-          </ContentLink>,
+          </Link>,
         );
       }
 
@@ -123,45 +82,37 @@ const InfoBlock = ({ info }) => {
     return parts;
   };
 
-  const ContentLink = styled(Link)({
-    ...style.link,
-    textDecoration: "none",
-  });
-
   const Highlight = styled("span")({
     color: style.accentColor,
     fontWeight: "bold",
   });
 
   return (
-    <Grid container spacing={2} marginTop="30px">
-      <Grid size={{ xs: 12, md: 3 }}>
+    <Grid
+      component="header"
+      container
+      columnSpacing={{ xs: 0, sm: 3, md: 4 }}
+      rowSpacing={2}
+    >
+      <Grid size={{ xs: 12, sm: 3 }}>
         <Box
+          component="img"
+          src={info.profilePhoto}
+          alt={`Portrait of ${info.name}`}
           sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: { xs: "center", md: "flex-start" },
-            height: "100%",
+            display: "block",
+            width: "100%",
+            maxWidth: { xs: "9rem", sm: "12rem" },
+            height: "auto",
+            borderRadius: "16px",
           }}
-        >
-          <img
-            src={`${info.profilePhoto}`} // Path to your image
-            alt="Profile Photo"
-            style={{
-              justifyContent: "center",
-              width: "100%",
-              maxWidth: "240px",
-              height: "auto",
-              borderRadius: "16px", // Adjust as needed
-            }}
-          />
-        </Box>
+        />
       </Grid>
-      <Grid size={{ xs: 12, md: 9 }}>
-        <Typography variant="h1" gutterBottom sx={style.h1}>
+      <Grid size={{ xs: 12, sm: 9 }}>
+        <Typography variant="h1" sx={{ ...style.h1, mb: 1 }}>
           {info.name}
         </Typography>
-        <Typography variant="body2" gutterBottom sx={style.body1}>
+        <Typography component="p" sx={style.body1}>
           {parseMarkdown(info.content)}
         </Typography>
 

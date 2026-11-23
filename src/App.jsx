@@ -1,6 +1,6 @@
-import './App.css'
+import "./App.css";
 
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
 import ProjectBlock from "./components/projectBlock";
 import NewsBlock from "./components/newsBlock";
@@ -16,35 +16,40 @@ import openSourceProjects from "./data/openSourceProjects.json";
 function App() {
   return (
     <Container
-        maxWidth={false}
-        sx={{
-          maxWidth: "960px", // Set your custom max width here
-          marginBottom: "30vh",
-        }}
-      >
-        <InfoBlock info={myInfo} />
+      component="main"
+      maxWidth={false}
+      disableGutters
+      sx={{
+        maxWidth: "60rem",
+        px: { xs: 2.5, sm: 4, md: 5 },
+        pt: { xs: 4, md: 7 },
+        pb: { xs: 6, md: 9 },
+        "& > section": { mt: { xs: 4, md: 5 } },
+      }}
+    >
+      <InfoBlock info={myInfo} />
 
-        {/* News Section */}
-
-        <Typography component="h1" gutterBottom marginTop="30px" sx={style.h2}>
+      <Box component="section" aria-labelledby="news-heading">
+        <Typography id="news-heading" component="h2" sx={style.h2}>
           News
         </Typography>
-        {news.map((item, iter) => (
-          <NewsBlock key={iter} time={item.time} content={item.content} />
-        ))}
+        <Box component="ul" role="list" sx={{ m: 0, p: 0, listStyle: "none" }}>
+          {news.map((item, iter) => (
+            <NewsBlock key={iter} time={item.time} content={item.content} />
+          ))}
+        </Box>
+      </Box>
 
-        {/* Publication Section */}
-
-        <Typography component="h2" gutterBottom marginTop="30px" sx={style.h2}>
+      <Box component="section" aria-labelledby="publications-heading">
+        <Typography id="publications-heading" component="h2" sx={style.h2}>
           Selected Publications
         </Typography>
-        <Typography component="p" gutterBottom sx={style.body1}>
+        <Typography component="p" sx={style.body2}>
           * indicates equal contribution
         </Typography>
         {publications.map((item, iter) => (
           <ProjectBlock
             key={iter}
-            index={iter}
             title={item.title}
             image={item.image}
             authors={item.authors}
@@ -54,22 +59,15 @@ function App() {
             myName={myInfo.name}
           />
         ))}
+      </Box>
 
-        {/* Open source Projects Section */}
-
-        <Typography
-          variant="h5"
-          component="h1"
-          gutterBottom
-          marginTop="30px"
-          sx={style.h2}
-        >
-          Open Sourced Projects
+      <Box component="section" aria-labelledby="projects-heading">
+        <Typography id="projects-heading" component="h2" sx={style.h2}>
+          Open-Source Projects
         </Typography>
         {openSourceProjects.map((item, iter) => (
           <ProjectBlock
             key={iter}
-            index={iter}
             title={item.title}
             image={item.image}
             authors={item.authors}
@@ -79,8 +77,9 @@ function App() {
             myName={myInfo.name}
           />
         ))}
-      </Container>
-  )
+      </Box>
+    </Container>
+  );
 }
 
-export default App
+export default App;

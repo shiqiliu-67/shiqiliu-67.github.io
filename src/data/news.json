@@ -1,5 +1,9 @@
 [
   {
+    "time": "2026-11",
+    "content": "[ELEVATE](https://arxiv.org/abs/2610.38388) was accepted to the [Continually Self-Improving Robots Workshop](https://csircorl.github.io/website/#accepted-papers) at CoRL 2026."
+  },
+  {
     "time": "2026-09",
     "content": "Our paper [MIRROR](https://pomdp-mirror.github.io/) was accepted to CoRL 2026!"
   },
