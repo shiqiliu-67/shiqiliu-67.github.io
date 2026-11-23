@@ -5,13 +5,14 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SchoolIcon from "@mui/icons-material/School";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
+import XIcon from "@mui/icons-material/X";
 
 import style from "../styles/default";
 
 const SocialMediaLinks = ({ info }) => {
   const iconButtonStyle = {
     color: style.primeColor,
-    margin: "0 10px",
+    margin: { xs: "0 3px", sm: "0 10px" },
     "&:hover": {
       color: style.accentColor,
       backgroundColor: "var(--color-control-hover)",
@@ -20,11 +21,12 @@ const SocialMediaLinks = ({ info }) => {
   const github = info.github;
   const linkedIn = info.linkedIn;
   const googleScholar = info.googleScholar;
+  const twitter = info.twitter;
   const email = `mailto:${info.email}`;
   const cv = info.cv;
 
   return (
-    <ButtonGroup>
+    <ButtonGroup sx={{ flexWrap: "wrap" }}>
       <IconButton
         href={email}
         target="_blank"
@@ -58,6 +60,17 @@ const SocialMediaLinks = ({ info }) => {
       >
         <LinkedInIcon />
       </IconButton>
+      {twitter && (
+        <IconButton
+          aria-label="X (Twitter)"
+          href={twitter}
+          target="_blank"
+          rel="noopener"
+          sx={iconButtonStyle}
+        >
+          <XIcon />
+        </IconButton>
+      )}
       <IconButton
         href={cv}
         target="_blank"

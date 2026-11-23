@@ -5,7 +5,8 @@
     "journals": "Under review, 2026",
     "image": "/imgs/elevate.gif",
     "links": [
-      { "name": "Website", "link": "https://agentic-quad-elevate.github.io/public/" }
+      { "name": "Website", "link": "https://agentic-quad-elevate.github.io/public/" },
+      { "name": "Paper", "link": "https://arxiv.org/abs/2610.38388" }
     ]
   },
   {
