@@ -5,6 +5,7 @@ import style from "../styles/default";
 
 const ProjectBlock = ({
   title,
+  headingComponent = "h3",
   authors,
   journals,
   links,
@@ -150,7 +151,7 @@ const ProjectBlock = ({
       </Grid>
 
       <Grid size={{ xs: 12, sm: 8.5 }}>
-        <Typography variant="h3" sx={{ ...style.h3, mb: 0.5 }}>
+        <Typography component={headingComponent} variant="h3" sx={{ ...style.h3, mb: 0.5 }}>
           {title}
         </Typography>
         {authors && (

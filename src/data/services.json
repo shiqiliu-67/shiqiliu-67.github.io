@@ -1,0 +1,19 @@
+[
+  {
+    "role": "Conference reviewer",
+    "venues": [
+      "CoRL 2026",
+      "ICRA 2026",
+      "ICML 2026",
+      "IROS 2025 and 2026",
+      "NeurIPS 2026"
+    ]
+  },
+  {
+    "role": "Journal reviewer",
+    "venues": [
+      "IEEE Robotics and Automation Letters (RA-L), 2026",
+      "IEEE Transactions on Robotics (T-RO), 2026"
+    ]
+  }
+]
